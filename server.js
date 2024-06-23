@@ -22,6 +22,7 @@ mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    dbName:'users_database'
   })
   .then(() => {
     console.log("Connected to MongoDB");
@@ -85,5 +86,6 @@ io.on("connection", (socket) => {
 const PORT = process.env.PORT || 5001;
 
 http.listen(PORT, () => { 
-    console.log(`App listening on port ${PORT}`);
+    const address = http.address();
+    console.log(`App listening on ${address.address}:${address.port}`);
 });
