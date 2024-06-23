@@ -22,7 +22,7 @@ mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName:'users_database'
+    dbName:'user_database'
   })
   .then(() => {
     console.log("Connected to MongoDB");
